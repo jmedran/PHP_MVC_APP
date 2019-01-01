@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 class Project_model extends CI_Model {
@@ -11,15 +11,10 @@ class Project_model extends CI_Model {
 
 		$query = $this->db->get('projects');
 
-
-	
-
 		return $query->row();
 
 
 	}
-
-
 
 
 	public function get_projects() {
@@ -29,9 +24,8 @@ class Project_model extends CI_Model {
 		return $query->result();
 
 
-
-
 	}
+
 
 
 	public function get_all_projects($user_id) {
@@ -44,10 +38,6 @@ class Project_model extends CI_Model {
 		return $query->result();
 
 	}
-
-
-
-
 
 
 	public function create_project($data) {
@@ -94,6 +84,8 @@ class Project_model extends CI_Model {
 	}
 
 
+
+
 	public function get_project_tasks($project_id, $active = true) {
 
 
@@ -128,22 +120,14 @@ class Project_model extends CI_Model {
 
 			return FALSE;
 
-		} 
+		}
 
 
 		return $query->result();
 
 
-
-
-
-
-
-
-
-
-
 	}
+
 
 
 
@@ -158,20 +142,25 @@ class Project_model extends CI_Model {
 
 	}
 
+	public function search_projects($search) {
+													// Produces: WHERE project_name LIKE '%Jones%'
+						$this->db->select('*');
+						$this->db->like('project_name',"%" . $search . "%", 'both');
+						$query=$this->db->get("projects");
+						$result=$query->result_array();
+							return $result;
 
+					 }
 
-
-
-
-
-
-
+		public function search_projects2($search) {
+				$search_term="%" . $search . "%";
+				$sql="SELECT * FROM projects WHERE project_name LIKE ? ";
+				$query=$this->db->query($sql, array($search_term));
+				return $query->result();
+		}
 
 
 }
-
-
-
 
 
 

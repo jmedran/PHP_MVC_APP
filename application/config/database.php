@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'www.it354.com',
-	'username' => 'it354_students',
-	'password' => 'steinway',
-	'database' => 'it354_assign4',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'example',
+	'username' => 'example',
+	'password' => 'example',
+	'database' => 'example',
+	'dbdriver' => 'example',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

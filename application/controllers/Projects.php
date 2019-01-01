@@ -13,7 +13,7 @@ class Projects extends CI_Controller
             redirect('home/index');
         }
     }
-    
+
     public function index()
     {
         $user_id = $this->session->userdata('user_id');
@@ -33,6 +33,8 @@ class Projects extends CI_Controller
 
         $data['main_view'] = "projects/display";
         $this->load->view('layouts/main', $data);
+
+
     }
 
     public function create()
@@ -74,7 +76,7 @@ class Projects extends CI_Controller
                 'project_user_id' => $this->session->userdata('user_id'),
                 'project_name' => $this->input->post('project_name'),
                 'project_body' => $this->input->post('project_body')
-                
+
                 );
 
             if ($this->project_model->edit_project($project_id, $data)) {
@@ -93,4 +95,18 @@ class Projects extends CI_Controller
         $this->session->set_flashdata('project_deleted', 'Your Project has been deleted');
         redirect("projects/index");
     }
+
+    public function test()
+        {
+            $data['projects'] = $this->project_model->search_projects();
+            var_dump($data['projects']);
+        }
+
+
+
+        public function test2()
+        {
+            $data['projects'] = $this->project_model->search_projects2();
+            var_dump($data['projects']);
+        }
 }

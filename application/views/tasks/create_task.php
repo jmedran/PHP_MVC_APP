@@ -5,8 +5,8 @@
 <?php echo form_open('tasks/create/'. $this->uri->segment(3).'', $attributes);?>
 
 <div class="form-group">
-	
-<?php echo form_label('task Name'); ?>
+
+<?php echo form_label('Task Name'); ?>
 
 <?php
 $data = array(
@@ -20,8 +20,8 @@ $data = array(
 
 </div>
 
-<div class="form-group">	
-<?php echo form_label('task Description'); ?>
+<div class="form-group">
+<?php echo form_label('Task Description'); ?>
 <?php
 
 $data = array(
@@ -34,7 +34,7 @@ $data = array(
 
 </div>
 
-<div class="form-group">	
+<div class="form-group">
 <?php
 $data = array(
 	'class' => 'form-control',
@@ -48,7 +48,7 @@ $data = array(
 </div>
 
 <div class="form-group">
-	
+
 <?php
 $data = array(
 	'class' => 'btn btn-primary',
@@ -62,9 +62,6 @@ $data = array(
 </div>
 <?php echo form_close();?>
 
-<script>	
+<script>
 
 </script>
-
-
-
